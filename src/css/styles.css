@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+  background-image: url("https://source.unsplash.com/1920x1080/?landscape");
+}
+
+.card {
+  background-color: #000000d0;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
+}
+
+.card .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .search .search-bar {
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background-color: #7c7c7c2b;
+  color: #fff;
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+  font-size: 120%;
+}
+
+.card .search button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 40px;
+  width: 40px;
+  font-size: 1rem;
+  background-color: #7c7c7c2b;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.card .search button:hover {
+  background-color: #7c7c7c6b;
+}
+
+.card .weather .flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.card .weather .temp {
+  margin: 0.4em 0;
+}
+
+.card .weather .description {
+  margin-left: 8px;
+}
+
+.card .weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.card .weather.loading::after {
+  visibility: visible;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  content: "Loading...";
+}
+/*# sourceMappingURL=styles.css.map */
