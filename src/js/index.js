@@ -1,15 +1,14 @@
 const weather = {
       apiKey: "0e8b2c4e5a41d2b3b81897c77b9e4d88",
       fetchWeather: function (city) {
-            fetch(
+            axios.get(
                   "https://api.openweathermap.org/data/2.5/weather?q=" +
                         city +
                         "&units=metric&appid=" +
                         this.apiKey
-            )
-                  .then((response) => response.json())
-                  .then((data) => this.displayWeather(data))
-                  .catch((error) => console.log(error));
+            )     
+                  .then((data) => this.displayWeather(data.data))
+                  .catch((error) => console.error(error));
       },
       displayWeather: function (data) {
             //  Get data from api
