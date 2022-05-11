@@ -93,4 +93,4 @@ document.querySelector(".search .get-location").addEventListener("click", () => 
 });
 
 // weather.fetchWeather("Mashhad");
-weather.fetchWeather("London");
+weather.fetchWeather("los angeles");
