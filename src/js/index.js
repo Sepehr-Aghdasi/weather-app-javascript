@@ -66,7 +66,7 @@ const weather = {
                         const { city } = data.data;
 
                         weather.fetchWeather(city);
-                        console.log("The city :${city}");
+                        console.log(`The city ${city}`);
                   })
                   .catch((error) => console.error(error));
       },
