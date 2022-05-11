@@ -8,7 +8,15 @@ const weather = {
                         this.apiKey
             )
                   .then((data) => this.displayWeather(data.data))
-                  .catch((error) => console.error(error));
+                  .catch((error) => {
+                        console.error(error);
+                        if (error.response.data.cod == 404) {
+                              console.log(error.response.data.message);
+                        }
+                        if (error.response.data.cod == 400) {
+                              console.log("Enter a city");
+                        }
+                  });
       },
       displayWeather: function (data) {
             //  Get data from api
