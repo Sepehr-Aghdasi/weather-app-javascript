@@ -6,7 +6,7 @@ const weather = {
                         city +
                         "&units=metric&appid=" +
                         this.apiKey
-            )     
+            )
                   .then((data) => this.displayWeather(data.data))
                   .catch((error) => console.error(error));
       },
@@ -61,17 +61,14 @@ const weather = {
             );
       },
       getApi: function (bdcApi) {
-            Http.open("GET", bdcApi);
-            Http.send();
-            Http.onreadystatechange = function () {
-                  if (this.readyState == 4 && this.status == 200) {
-                        const data = JSON.parse(this.response);
-                        const { city } = data;
+            axios.get(bdcApi)
+                  .then((data) => {
+                        const { city } = data.data;
 
                         weather.fetchWeather(city);
-                        console.log(city);
-                  }
-            };
+                        console.log("The city :${city}");
+                  })
+                  .catch((error) => console.error(error));
       },
 };
 
